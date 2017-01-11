@@ -20,7 +20,7 @@ import javax.websocket.server.ServerEndpoint;
  *
  * @author lapin
  */
-@ServerEndpoint("/endpoint")
+@ServerEndpoint("/chat")
 public class ChatEndpoint {
     
     Session session;
@@ -39,7 +39,7 @@ public class ChatEndpoint {
     
     @OnOpen
     public void onOpen(Session session) throws IOException {
-        this.session = session;
+        //this.session = session;
         sessions.add(session);
     }
 
