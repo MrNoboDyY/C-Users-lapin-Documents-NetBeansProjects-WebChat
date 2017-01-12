@@ -22,5 +22,10 @@ and open the template in the editor.
 }
 
 .text{ 
-   
+    background-color: #ff9919;
+    background-image:url("png/twitter_large_1.png") ;
+    border: 5px solid #ff0000;
+    border-radius: 09px;
+    font-family: "Futura Condensed Extrabolt",sans-serif;
+    resize: none;
 }

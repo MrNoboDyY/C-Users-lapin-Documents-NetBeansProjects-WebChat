@@ -9,51 +9,52 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="chatcss.css" rel="stylesheet" type="text/css"/>
-        <script>
+        <link href="chatcss.css"  rel="stylesheet" type="text/css"/>
+    
+    <script>
 
-            var connexionClient = new WebSocket("ws://localhost:8080/WebChat/chat");
-
-
-            //si erreur de connexion !!
-            connexionClient.onerror = function (event) {
-                alert("Erreur");
-            };
+        var connexionClient = new WebSocket("ws://localhost:8080/WebChat/chat");
 
 
-            //a l'ouverture de la connexion!!
-            //envoi du bonjour dès la connexion
-            connexionClient.onopen = function (event) {
-                //alert("Data " + event);
-                connexionClient.send("Bonjour, ");
-            };
+        //si erreur de connexion !!
+        connexionClient.onerror = function (event) {
+            alert("Erreur");
+        };
 
 
-            //a l'evenement "keypress" apres le message
-            connexionClient.onmessage = function (event) {
-                //alert("Message : " + event.data); 
-                document.getElementById("zone").innerHTML += event.data + "\n";
-            };
+        //a l'ouverture de la connexion!!
+        //envoi du bonjour dès la connexion
+        connexionClient.onopen = function (event) {
+            //alert("Data " + event);
+            connexionClient.send("Bonjour, ");
+        };
 
-            //fonction envoyer liée a l'evenenemnt sur le "keypress" apres le message !!
-            function envoyer(event) {
-                var obj = document.getElementById("saisie");//la recup de l'input "saisie" 
-                var texte = obj.value;//recup de la valeur de l'input(val de l'objet)
 
-                if (event.keyCode === 13) {//touche entrée pressée
-                    //alert("RETURN");                  
-                    connexionClient.send(texte);//envoi de la valeur da l'input
-                    obj.value = "";//raz de l'input
-                }
+        //a l'evenement "keypress" apres le message
+        connexionClient.onmessage = function (event) {
+            //alert("Message : " + event.data); 
+            document.getElementById("zone").innerHTML += event.data + "\n";
+        };
 
+        //fonction envoyer liée a l'evenenemnt sur le "keypress" apres le message !!
+        function envoyer(event) {
+            var obj = document.getElementById("saisie");//la recup de l'input "saisie" 
+            var texte = obj.value;//recup de la valeur de l'input(val de l'objet)
+
+            if (event.keyCode === 13) {//touche entrée pressée
+                //alert("RETURN");                  
+                connexionClient.send(texte);//envoi de la valeur da l'input
+                obj.value = "";//raz de l'input
             }
 
+        }
 
-        </script>
-    </head>
-    <body>
-        <div>Bienvenue</div>
-        <textarea  class="text"  disabled name=" zone" id="zone" cols="30" rows="10"></textarea>
-        <input class="input" type="text" id="saisie" name="saisie" value=""  onkeypress="envoyer(event)" placeholder="Soyez polis !!" />
-    </body>
+
+    </script>
+</head>
+<body>
+    <div>Bienvenue</div>
+    <textarea class="text"  disabled name="zone" id="zone" cols="30" rows="8" ></textarea>
+    <input class="input" type="text" id="saisie" name="saisie" value=""  onkeypress="envoyer(event)" placeholder="Soyez polis !!" />
+</body>
 </html>
