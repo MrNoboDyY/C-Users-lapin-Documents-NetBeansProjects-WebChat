@@ -9,7 +9,7 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+        <link href="chatcss.css" rel="stylesheet" type="text/css"/>
         <script>
 
             var connexionClient = new WebSocket("ws://192.168.1.186:8080/WebChat/chat");
@@ -53,7 +53,7 @@ and open the template in the editor.
     </head>
     <body>
         <div>Bienvenue</div>
-        <textarea disabled name=" zone" id="zone" cols="30" rows="10"></textarea>
+        <textarea  class="text"  disabled name=" zone" id="zone" cols="30" rows="10"></textarea>
         <input class="input" type="text" id="saisie" name="saisie" value=""  onkeypress="envoyer(event)" placeholder="Soyez polis !!" />
     </body>
 </html>

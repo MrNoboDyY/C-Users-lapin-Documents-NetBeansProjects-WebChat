@@ -10,11 +10,17 @@ and open the template in the editor.
 
 .input{
     border:1px solid #AAA;
-    height:150px;
+    height:20px;
     width:300px;
     resize:none;
     padding:3px;
     overflow:auto;
     border-radius:09px;
+    border-width: 5px;
+    border-color: #999900;
     font-family:'Times New Roman';
+}
+
+.text{ 
+   
 }
