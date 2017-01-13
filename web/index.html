@@ -10,7 +10,7 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="chatcss.css"  rel="stylesheet" type="text/css"/>
-    
+        
     <script>
 
         var connexionClient = new WebSocket("ws://localhost:8080/WebChat/chat");
@@ -52,7 +52,7 @@ and open the template in the editor.
 
     </script>
 </head>
-<body>
+<body >
     <div>Bienvenue</div>
     <textarea class="text"  disabled name="zone" id="zone" cols="30" rows="8" ></textarea>
     <input class="input" type="text" id="saisie" name="saisie" value=""  onkeypress="envoyer(event)" placeholder="Soyez polis !!" />
