@@ -10,71 +10,27 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="chatcss.css"  rel="stylesheet" type="text/css"/>
-
-        <script>
-
-            var connexionClient = new WebSocket("ws://localhost:8080/WebChat/chat");
-
-
-            //si erreur de connexion !!
-            connexionClient.onerror = function (event) {
-                alert("Erreur de connexion");
-            };
-
-
-            //a l'ouverture de la connexion!!
-            //envoi du bonjour dès la connexion
-            connexionClient.onopen = function (event) {
-                //alert("Data " + event);
-                connexionClient.send("Bonjour,merci d'avoir choisi ce \n\
-         chat !! ");
-            };
-
-            //a l'evenement "keypress" apres le message
-            connexionClient.onmessage = function (event) {
-                //alert("Message : " + event.data); 
-                document.getElementById("zone").innerHTML += event.data + "\n";
-            };
-
-            //fonction envoyer liée a l'evenenemnt sur le "keypress" apres le message !!
-            function envoyer(event) {
-                //on range l'input/messageSaisi dans une variable grace a son id:"sasie"
-                var messageSaisi = document.getElementById("saisie");
-
-                //la valeur du texte saisie !!!
-                var texte = messageSaisi.value;
-
-                
-                //envoi du messageSaisi avec la touche "ENTREE"!!!
-                if (event.keyCode === 13) {//touche entrée pressée 
-                    //alert("RETURN");                  
-                    connexionClient.send(username.value + ":"+ messageSaisi.value);//envoi de la valeur da l'input/messageSaisi !!!
-                    messageSaisi.value = "";//remise a zéro de l'input après l'envoi
-                }
-
-            }
-
-
-        </script>
+        <script src="WebChatjs.js" type="text/javascript"></script>
     </head>
     <body >
         <div id="menu" class="row">
-            <p class= "bienvenu">Bienvenue / <a id="exitchat" href="#">Log Out</a></p>
+            <p class= "bienvenu">Bienvenue / <a id="exitchat" href="#">Log Out</a></p>          
             <!--<p class="exitchat" ></p>-->
-        </div>
+        </div><br>
+        
         <br>
         <label for="username">Pseudo</label>
-        <input class="input2" id="username"  type="text" name="username" value="" ><br>
+        <input class="input2" id="username"  type="text" name="username" value="" maxlength="4" ><br>
         <br>
 
-        <textarea class="text"  disabled name="zone" id="zone" cols="30" rows="8" ></textarea><br>
-        
+        <textarea readonly="readonly" class="text"  disabled name="zone" id="zone" cols="30" rows="8" ></textarea><br>
+
 
         <input class="input" 
                type="text" required 
                id="saisie" name="saisie" value=""  
                onkeypress="envoyer(event)" 
                placeholder="Soyez polis !!" />
-        
+
     </body>
 </html>

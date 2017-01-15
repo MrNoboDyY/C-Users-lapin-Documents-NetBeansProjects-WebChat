@@ -7,6 +7,10 @@ and open the template in the editor.
     Created on : 12 janv. 2017, 16:30:26
     Author     : lapin
 */
+#horloge{
+    position: fixed;
+    top: 20px;
+}
 
 .input{
     border:1px solid #AAA;
@@ -48,7 +52,8 @@ and open the template in the editor.
     border-radius:09px;
     border-width: 5px;
     border-color: #00cc33;
-    font-family:'Times New Roman';
+    font-family: 'Futura Condensed Extra Bolt',sans-serif;
+    font-weight: bold;
     
 }
 
