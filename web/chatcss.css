@@ -11,7 +11,7 @@ and open the template in the editor.
 .input{
     border:1px solid #AAA;
     height:20px;
-    width:300px;
+    width:285px;
     resize:none;
     padding:3px;
     overflow:auto;
@@ -19,11 +19,12 @@ and open the template in the editor.
     border-width: 5px;
     border-color: #999900;
     font-family:'Times New Roman';
+    
 }
 
 .text{ 
-    background-color: #ff9919;
-    background-image:url("png/twitter_large_1.png") ;
+    background-color: #ffcc66;
+    
     border: 5px solid #ff0000;
     border-radius: 09px;
     font-size: 125%; 
@@ -32,3 +33,24 @@ and open the template in the editor.
     resize: none;
 }
 
+.row{
+    text-align: center;
+    
+}
+
+.input2{
+    border:1px solid #AAA;
+    height:20px;
+    width:285px;
+    resize:none;
+    padding:3px;
+    overflow:auto;
+    border-radius:09px;
+    border-width: 5px;
+    border-color: #00cc33;
+    font-family:'Times New Roman';
+    
+}
+
+/*.exitchat{float: right}*/
+/*background-image:url("png/twitter_large_1.png") ;*/
