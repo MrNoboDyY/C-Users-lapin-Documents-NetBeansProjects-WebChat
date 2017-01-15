@@ -13,24 +13,58 @@ and open the template in the editor.
         <script src="WebChatjs.js" type="text/javascript"></script>
     </head>
     <body >
+        <!--        ooooooooo
+        
+        <noscript> après mettre une div  
+        <div class="blocNoJs"></div> mettre une seconde 
+        div <div>Erreur de Configuration : JavaScript n'est pas activé dans votre navigateur.
+        Pour naviguer sur le site et beneficier de toutes les fonctionnalités,
+        il vous faut au préalable activer JavaScript.</div> 
+        puis fermer la div </noscript>
+        
+        -->
+        <noscript>
+        <div class="blocNoJs" ></div>
+        <div>Erreur de Configuration : JavaScript n'est pas activé dans votre navigateur.
+            Pour naviguer sur le site et beneficier de toutes les fonctionnalités,
+            il vous faut au préalable activer JavaScript.</div>
+        </noscript>
+
+
         <div id="menu" class="row">
             <p class= "bienvenu">Bienvenue / <a id="exitchat" href="#">Log Out</a></p>          
             <!--<p class="exitchat" ></p>-->
         </div><br>
-        
-        <br>
-        <label for="username">Pseudo</label>
-        <input class="input2" id="username"  type="text" name="username" value="" maxlength="4" ><br>
-        <br>
+
+
 
         <textarea readonly="readonly" class="text"  disabled name="zone" id="zone" cols="30" rows="8" ></textarea><br>
 
+        <br>
+        <!--<input onclick="connecter()" class="connect" id="connect" type="submit" value="Log Inn" name="connect" /><br>-->
 
-        <input class="input" 
-               type="text" required 
-               id="saisie" name="saisie" value=""  
+        <label for="username"></label>
+        <input   class="input2" 
+                 id="username"  
+                 type="text" 
+                 maxlength="4"
+                 name="username" 
+                 value="" 
+                 required
+                 placeholder="pseudo ici !!"><br>
+        <br>
+        <label for="message"></label>
+        <input class="input"                
+               id="saisie" 
+               name="saisie"
+               type="text"  
+               value=""  
                onkeypress="envoyer(event)" 
-               placeholder="Soyez polis !!" />
+               placeholder="message ici!!"
+               />
+
 
     </body>
 </html>
+<!---->
+<!--pattern="[A-Za-z]{4}"-->  

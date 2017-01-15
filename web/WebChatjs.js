@@ -6,45 +6,46 @@
 
 
 
-var connexionClient = new WebSocket("ws://localhost:8080/WebChat/chat");
+            var connexionClient = new WebSocket("ws://localhost:8080/WebChat/chat");
 
 
-//si erreur de connexion !!
-connexionClient.onerror = function (event) {
-    alert("Erreur de connexion");
-};
+            //si erreur de connexion !!
+            connexionClient.onerror = function (event) {
+                alert("Erreur de connexion");
+            };
 
 
 
-//a l'ouverture de la connexion!!
-//envoi du bonjour dès la connexion
-connexionClient.onopen = function (event) {
-    //alert("Data " + event);
-    connexionClient.send("Bonjour,merci d'avoir choisi ce Tchat !! ");
-};
+            //a l'ouverture de la connexion!!
+            //envoi du bonjour dès la connexion
+            connexionClient.onopen = function (event) {
+                //alert("Data " + event);
+                connexionClient.send("Bonjour,merci d'avoir choisi ce Tchat !! ");
+            };
 
-//a l'evenement "keypress" apres le message
-connexionClient.onmessage = function (event) {
-    //alert("Message : " + event.data); 
-    document.getElementById("zone").innerHTML += event.data + "\n";
-};
+            //a l'evenement "keypress" apres le message
+            connexionClient.onmessage = function (event) {
+                //alert("Message : " + event.data); 
+                document.getElementById("zone").innerHTML += event.data + "\n";
+            };
 
-//fonction envoyer liée a l'evenenemnt sur le "keypress" apres le message !!
-function envoyer(event) {
-    //on range l'input/messageSaisi dans une variable grace a son id:"sasie"
-    var messageSaisi = document.getElementById("saisie");
+            //fonction envoyer liée a l'evenenemnt sur le "keypress" apres le message !!
+            function envoyer(event) {
+                //on range l'input/messageSaisi dans une variable grace a son id:"sasie"
+                var messageSaisi = document.getElementById("saisie");
 
-    //la valeur du texte saisie !!!
-    var texte = messageSaisi.value;
+                //la valeur du texte saisie !!!
+                var texte = messageSaisi.value;
 
 
-    //envoi du messageSaisi avec la touche "ENTREE"!!!
-    if (event.keyCode === 13) {//touche entrée pressée 
+                //envoi du messageSaisi avec la touche "ENTREE"!!!
+                if (event.keyCode === 13) {//touche entrée pressée 
 
-        //envoi de la valeur da l'input/messageSaisi + pseudo !!!
-        connexionClient.send(username.value + ":" + messageSaisi.value);
-        messageSaisi.value = "";//remise a zéro de l'input après l'envoi
-    }
+                    //envoi de la valeur da l'input/messageSaisi + pseudo !!!
+                    connexionClient.send(username.value + ":" + messageSaisi.value);
+                    messageSaisi.value = "";//remise a zéro de l'input après l'envoi
+                }
 
-}
+            }
+            
 

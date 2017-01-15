@@ -7,10 +7,7 @@ and open the template in the editor.
     Created on : 12 janv. 2017, 16:30:26
     Author     : lapin
 */
-#horloge{
-    position: fixed;
-    top: 20px;
-}
+
 
 .input{
     border:1px solid #AAA;
@@ -27,14 +24,14 @@ and open the template in the editor.
 }
 
 .text{ 
-    background-color: #ffcc66;
-    
+    background-color: #ffcc66;    
     border: 5px solid #ff0000;
     border-radius: 09px;
     font-size: 125%; 
     font-style: italic;
     font-weight: bold;
     resize: none;
+    
 }
 
 .row{
@@ -54,8 +51,10 @@ and open the template in the editor.
     border-color: #00cc33;
     font-family: 'Futura Condensed Extra Bolt',sans-serif;
     font-weight: bold;
-    
+     
 }
+
+
 
 /*.exitchat{float: right}*/
 /*background-image:url("png/twitter_large_1.png") ;*/
