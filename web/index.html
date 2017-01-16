@@ -10,7 +10,10 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="chatcss.css"  rel="stylesheet" type="text/css"/>
+        <script src="jquery-3.1.1.js" type="text/javascript"></script>
         <script src="WebChatjs.js" type="text/javascript"></script>
+        <script src="WebChatjs2.js" type="text/javascript"></script>
+
     </head>
     <body >
         <!--        ooooooooo
@@ -51,7 +54,7 @@ and open the template in the editor.
                  name="username" 
                  value="" 
                  required
-                 placeholder="pseudo ici !!"><br>
+                 placeholder="pseudo ici !!"/><br>
         <br>
         <label for="message"></label>
         <input class="input"                
@@ -61,7 +64,7 @@ and open the template in the editor.
                value=""  
                onkeypress="envoyer(event)" 
                placeholder="message ici!!"
-               />
+               disabled="disabled"/>
 
 
     </body>
