@@ -36,17 +36,17 @@ connexionClient.onmessage = function (event) {
 function envoyer(event) {
     //on range l'input/messageSaisi dans une variable grace a son id:"sasie"
     var messageSaisi = document.getElementById("saisie");
-    var pseud = document.getElementById("username") ;
+    var pseudo = document.getElementById("username") ;
 
     //la valeur du texte saisie !!!
     var texte = messageSaisi.value;
-    var psd = pseud.value;
+    var pseudo = pseudo.value;
 
     //envoi du messageSaisi avec la touche "ENTREE"!!!
     if (event.keyCode === 13) {//touche entrée pressée 
 
         //envoi de la valeur da l'input/messageSaisi + pseudo !!!
-        connexionClient.send(psd + ":" + texte);
+        connexionClient.send(pseudo + ":" + texte);
         messageSaisi.value = "";//remise a zéro de l'input après l'envoi
     }
 

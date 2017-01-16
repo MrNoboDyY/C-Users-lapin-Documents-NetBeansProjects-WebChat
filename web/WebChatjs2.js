@@ -13,3 +13,10 @@ $( document ).ready(function() {
    }
 });
 });
+
+//$(document).ready(function(){
+//    $('#exitchat').click(function (){
+//        //alert(">>>>");
+//     
+//    });
+//});
